@@ -2,5 +2,7 @@ print("hello")
 print ('hi')
 print("hey")
 print("im, jessie")
-
 print("hello")
+print("good afternoon everyone")
+print("im, jessie")
+print('banana')
