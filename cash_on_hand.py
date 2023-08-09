@@ -20,7 +20,7 @@ for item in cashonhands:
             highest_day = f"{item[0]}"
             highest_surplus = surplus
     prev_coh = coh
-print(f"{highest_day} {highest_surplus}")
+print(f"highest surplus {highest_day} {highest_surplus}")
 
 for item in cashonhands:
     coh = int(item[1])
