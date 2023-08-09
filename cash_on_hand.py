@@ -9,8 +9,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         cashonhands.append([row[0],row[1]])
 # print(cashonhands)
 
+# initialize variables to store the value
 prev_coh = 0
 highest_surplus = 0
+
+# use for loop to iterate over the data in cashonhands list
 for item in cashonhands:
     coh = int(item[1])
     # checking whether there is a surplus and calculating it
