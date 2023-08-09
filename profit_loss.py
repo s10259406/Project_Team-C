@@ -13,7 +13,9 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     profitnloss = []
     # append day and net profit into profitnloss list
     for row in reader:
-        # get the day and net profits for each record and append the profitnloss list
-        profitnloss.append([row[0],row[4]])
-print(profitnloss)
+        net_profit = float(row[4])
+        # get the day and net profit for each record and append the profitnloss list
+        profitnloss.append([row[0],net_profit])
+# print(profitnloss)
 
+# create
