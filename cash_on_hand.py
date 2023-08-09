@@ -15,17 +15,17 @@ for item in cashonhands:
     coh = int(item[1])
     if coh < prev_coh:
         surplus = prev_coh - coh
-        print(f'surplus {item[0]} {surplus}')
+        print(f'[CASH SURPLUS] DAY: {item[0]}, AMOUNT: USD{surplus}')
         if surplus > highest_surplus:
             highest_day = f"{item[0]}"
             highest_surplus = surplus
     prev_coh = coh
-print(f"highest surplus {highest_day} {highest_surplus}")
+print(f"[HIGHEST CASH SURPLUS] DAY: {highest_day}, AMOUNT: USD{highest_surplus}")
 
 for item in cashonhands:
     coh = int(item[1])
     if coh > prev_coh:
         deficit = coh - prev_coh
-        print(f'deficit {item[0]} {deficit}')
+        print(f'[CASH DEFICIT] DAY: {item[0]}, AMOUNT: USD{deficit}')
     prev_coh = coh
 
