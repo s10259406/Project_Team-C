@@ -1,6 +1,1 @@
-print("hello")
-print ('hi')
-print("hey")
-print("good afternoon everyone")
-print("im, jessie")
-print('banana')
+
