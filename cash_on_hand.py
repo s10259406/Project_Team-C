@@ -9,3 +9,17 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     for row in reader:
         cashonhands.append([row[0],row[1]])
 # print(cashonhands)
+
+prev_coh = 0
+for item in cashonhands:
+    coh = int(item[1])
+    if coh < prev_coh:
+        difference = prev_coh - coh
+        print(f'{item[0]} {difference}')
+    prev_coh = coh
+
+# for item in cashonhands:
+#     coh = int(item[1])
+#     if coh > prev_coh:
+#         difference = coh - prev_coh
+#     prev_coh = coh
