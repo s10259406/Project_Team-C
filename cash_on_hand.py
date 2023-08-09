@@ -1,6 +1,6 @@
 from pathlib import Path
 import csv
-fp =Path.home()/"p4b igp"/"Project_Team-C"/"csv_reports"/"Cash_on_Hand.csv"
+fp = Path.cwd()/"csv_reports"/"Cash_on_Hand.csv"
 # print(fp.exists())
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
@@ -15,11 +15,13 @@ for item in cashonhands:
     coh = int(item[1])
     if coh < prev_coh:
         difference = prev_coh - coh
-        print(f'{item[0]} {difference}')
+        print(f'surplus{item[0]} {difference}')
     prev_coh = coh
 
-# for item in cashonhands:
-#     coh = int(item[1])
-#     if coh > prev_coh:
-#         difference = coh - prev_coh
-#     prev_coh = coh
+for item in cashonhands:
+    coh = int(item[1])
+    if coh > prev_coh:
+        difference = coh - prev_coh
+        print(f'deficit {item[0]} {difference}')
+    prev_coh = coh
+
