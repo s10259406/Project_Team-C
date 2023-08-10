@@ -28,5 +28,5 @@ def main(option):
             file.write(f'{profit_loss.profitloss_function("Deficit")}')
 
 # call main function with an option
-main('SURPLUS')
+# main('SURPLUS')
 # main('DEFICIT')
