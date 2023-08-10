@@ -54,4 +54,4 @@ def coh_function (option):
     return results
 
 # print(coh_function('Surplus'))
-print(coh_function('Deficit'))
+# print(coh_function('Deficit'))
