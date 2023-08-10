@@ -63,7 +63,7 @@ def profitloss_function (option):
         if net_profit < previous_net_profit:
            # calculate the difference by subtracting the previous net profit from the current net profit
            difference = (net_profit - previous_net_profit) * -1
-           results += f'[PROFIT DEFICIT] DAY:{day}, AMOUNT: USD{difference}\n'
+           results += f'[NET PROFIT DEFICIT] DAY:{day}, AMOUNT: USD{difference}\n'
         previous_net_profit = net_profit
   return results
 
