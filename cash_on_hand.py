@@ -21,7 +21,7 @@ def coh_function (option):
     # initialize variables to store the value
     prev_coh = 0
     highest_surplus = 0
-    highest_day = 0
+    highest_day_surplus = 0
 
     # initialize an empty string to store the results
     results = ''
@@ -29,28 +29,29 @@ def coh_function (option):
     if option == 'Surplus':
         # use for loop to iterate over the data in cashonhands list
         for item in cashonhands:
+            day = item[0]
             coh = int(item[1])
             # checking whether there is a surplus and calculating it
-            if coh < prev_coh:
-                surplus = prev_coh - coh
-                results += f'[CASH SURPLUS] DAY: {item[0]}, AMOUNT: USD{surplus}\n'
+            if coh > prev_coh:
+                difference = coh - prev_coh
+                results += f'[CASH SURPLUS] DAY: {day}, AMOUNT: USD{difference}\n'
                 # finding out the highest surplus among all the other surpluses
-                if surplus > highest_surplus:
-                    highest_day = f"{item[0]}"
-                    highest_surplus = surplus
+                if difference > highest_surplus:
+                    highest_day_surplus = day
+                    highest_surplus = difference
             prev_coh = coh
-        results += f"[HIGHEST CASH SURPLUS] DAY: {highest_day}, AMOUNT: USD{highest_surplus}\n"
+        results += f"[HIGHEST CASH SURPLUS] DAY: {highest_day_surplus}, AMOUNT: USD{highest_surplus}\n"
         return results
 
     elif option =='Deficit':
         for item in cashonhands:
             coh = int(item[1])
             # checking whether there is a deficit and calculating it
-            if coh > prev_coh:
-                deficit = coh - prev_coh
+            if coh < prev_coh:
+                deficit = (coh - prev_coh) * -1
                 results += f'[CASH DEFICIT] DAY: {item[0]}, AMOUNT: USD{deficit}\n'
             prev_coh = coh
     return results
 
 # print(coh_function('Surplus'))
-# print(coh_function('Deficit'))
+print(coh_function('Deficit'))
