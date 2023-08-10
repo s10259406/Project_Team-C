@@ -17,19 +17,27 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         overheads.append([row[0],(row[1])])
 # print(overheads)
 
-category = row[0]
-overhead = float(row[1])
-# initialize variable to store the highest overhead value and category
-highest_overhead = 0
-highest_category = ''
+def overheads_function(option):
 
-# use for loop to iterate over the data in overgheads list
-for cat, ovh in overheads:
-    # convert str to float
-    ovh = float(ovh)
-    # compare the current overheads value with the highest overheads value
-    if ovh > highest_overhead:
-        # if the current overhead value is larger, it will be updated until finding the highest value and category
-        highest_category = cat
-        highest_overhead = ovh
-print(f'[HIGHEST OVERHEAD] {highest_category.upper()}: {highest_overhead}%')
+    '''
+    - The function will return the highest overhead
+    - Required parameter: option
+    '''
+
+    # initialize variable to store the highest overhead value and category
+    highest_overhead = 0
+    highest_category = ''
+    
+    if option == 'max_ovh':
+        # use for loop to iterate over the data in overheads list
+        for cat, ovh in overheads:
+            # convert str to float
+            ovh = float(ovh)
+            # compare the current overheads value with the highest overheads value
+            if ovh > highest_overhead:
+                # if the current overhead value is larger, it will be updated until finding the highest value and category
+                highest_category = cat
+                highest_overhead = ovh
+        return(f'[HIGHEST OVERHEAD] {highest_category.upper()}: {highest_overhead}%\n')
+
+# print(overheads_function('max_ovh'))
